@@ -1,1 +1,1 @@
-# kabanBoard
+# kanbanBoard

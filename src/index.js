@@ -3,7 +3,8 @@ import Logo from './assets/logo.svg';
 import likeIcon from './assets/like.png';
 
 // const involvementID = 'JNsfgJQ37UBE16zOiirg';
-const involvementURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/JNsfgJQ37UBE16zOiirg';
+const involvementURL =
+  'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/JNsfgJQ37UBE16zOiirg';
 
 // logo
 const logo = new Image();
@@ -87,9 +88,9 @@ const postLikes = async (id) => {
   await fetch(`${involvementURL}/likes`, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ item_id: id }),
+    body: JSON.stringify({ item_id: id })
   });
 };
 

@@ -1,5 +1,5 @@
 import './style.css';
-import Logo from './assets/logo.png';
+import Logo from './assets/logo.svg';
 
 const logo = new Image();
 

@@ -4,7 +4,7 @@
   "description": "<a name=\"readme-top\"></a>",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "webpack serve --open",
     "build": "webpack"
   },
@@ -20,8 +20,10 @@
   },
   "homepage": "https://github.com/MohamedHNoor/TvMaze-App#readme",
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.20.11",
     "css-loader": "^6.7.3",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^29.3.1",
     "style-loader": "^3.3.1",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1",

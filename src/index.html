@@ -7,20 +7,42 @@
     <title>Document</title>
   </head>
   <body id="body">
-    <header class="header fixed-header">
-      <div class="container">
-        <div class="nav">
-          <a href="#" class="logo"> </a>
-          <nav class="main-nav">
-            <ul class="main-nav-list">
-              <a href="#" class="main-nav-link">Movies</a>
-              <a href="#" class="main-nav-link">Contact</a>
-            </ul>
-          </nav>
-        </div>
+    <header>
+      <div class="brand">
+        <a href="index.html" class="logo"></a>
+        <a href="index.html">TV Shows</a>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Movies(<span id="count"></span>)</a>
+        <a href="#">Contact</a>
       </div>
     </header>
-    <main></main>
+    <main>
+      <section class="lists">
+        <!-- <div class="card">
+          <div
+            class="img"
+            style="
+              background: url('${movie.image.medium}');
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+            "
+          >
+            <p class="summary">${movie.summary}</p>
+          </div>
+          <h3 class="title">${movie.name}</h3>
+          <div class="likes">
+            <img src="${&hearts;}" alt="" class="like-icon" id="${movie.id}" />
+            <p class="like-count" id="${movie.id}">0</p>
+            <p>Likes</p>
+          </div>
+          <button class="comment-button" data-id="${index + 1}">
+            <span class="button-top">Comment</span>
+          </button>
+        </div> -->
+      </section>
+    </main>
     <footer class="footer fixed-footer">
       <div class="container">
         <p class="footer-text">

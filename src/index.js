@@ -1,11 +1,9 @@
-// import '../assets/res/logo.png';
 import './style.css';
-// import header from './modules/header';
+import Logo from './assets/logo.png';
 
-// let body = document.getElementsByTagName('body');
+const logo = new Image();
 
-// let headerSection = document.createElement('header-section');
+const brand = document.querySelector('.logo');
 
-// headerSection.innerHTML = header;
-
-  
+logo.src = Logo;
+brand.appendChild(logo);

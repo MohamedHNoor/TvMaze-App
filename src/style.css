@@ -14,7 +14,7 @@
 #fae5d3
 #eb984e
 
-- Shades: 
+- Shades:
 #cf711f
 #45260a
 */
@@ -82,6 +82,7 @@ footer {
 main {
   display: flex;
   justify-content: center;
+
   /* background: var(--bg-color); */
 }
 
@@ -106,14 +107,18 @@ main {
   padding: 15px;
   gap: 15px;
   border-radius: 12px;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  box-shadow:
+    rgba(0, 0, 0, 0.4) 0 2px 4px,
+    rgba(0, 0, 0, 0.3) 0 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
   transition: 0.5s;
 }
 
 .card:hover {
-  box-shadow: rgba(0, 0, 0, 0.9) 0px 2px 4px,
-    rgba(0, 0, 0, 0.9) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  box-shadow:
+    rgba(0, 0, 0, 0.9) 0 2px 4px,
+    rgba(0, 0, 0, 0.9) 0 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
 }
 
 .img {
@@ -123,8 +128,10 @@ main {
   height: 325px;
   border-radius: 10px;
   transition: 0.5s;
-  box-shadow: rgba(0, 0, 0, 0.9) 0 2px 4px, rgba(0, 0, 0, 0.9) 0 7px 13px -3px,
-    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  box-shadow:
+    rgba(0, 0, 0, 0.9) 0 2px 4px,
+    rgba(0, 0, 0, 0.9) 0 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
   cursor: pointer;
   text-align: center;
   align-items: center;

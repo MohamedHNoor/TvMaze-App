@@ -3,8 +3,7 @@ import Logo from './assets/logo.svg';
 import likeIcon from './assets/like.png';
 
 // const involvementID = 'JNsfgJQ37UBE16zOiirg';
-const involvementURL =
-  'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/JNsfgJQ37UBE16zOiirg';
+const involvementURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/JNsfgJQ37UBE16zOiirg';
 
 // logo
 const logo = new Image();
@@ -48,17 +47,22 @@ const displayMovies = (movies) => {
 
 // fetch data from API
 
+const itemsCounter = () => {
+  window.addEventListener('load', () => {
+    const lists = document.querySelector('.lists');
+    const displayNumber = lists.childElementCount;
+    const NumberOfCounts = document.getElementById('count');
+    NumberOfCounts.textContent = displayNumber;
+  });
+};
+
 const showsData = async () => {
   const response = await fetch('https://api.tvmaze.com/shows');
   const movies = await response.json();
   const latestMovies = movies.slice(0, 18);
   displayMovies(latestMovies);
   itemsCounter();
-  console.log(latestMovies);
 };
-
-const data = showsData();
-console.log(data);
 
 // displayLikes function
 
@@ -83,18 +87,9 @@ const postLikes = async (id) => {
   await fetch(`${involvementURL}/likes`, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ item_id: id })
-  });
-};
-
-const itemsCounter = () => {
-  window.addEventListener('load', () => {
-    const lists = document.querySelector('.lists');
-    const displayNumber = lists.childElementCount;
-    const NumberOfCounts = document.getElementById('count');
-    NumberOfCounts.textContent = displayNumber;
+    body: JSON.stringify({ item_id: id }),
   });
 };
 

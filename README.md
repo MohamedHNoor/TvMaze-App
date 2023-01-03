@@ -127,11 +127,11 @@ To get a local copy up and running, follow these steps.
 - Twitter: [@MohamedHNoor](https://twitter.com/MohamedHNoor)
 - LinkedIn: [@MohamedHNoor](https://www.linkedin.com/in/mohamedhnoor/)
 
-👤 **Mohamed H Noor**
+👤 **Yash Solo**
 
-- GitHub: [@MohamedHNoor](https://github.com/MohamedHNoor)
-- Twitter: [@MohamedHNoor](https://twitter.com/MohamedHNoor)
-- LinkedIn: [@MohamedHNoor](https://www.linkedin.com/in/mohamedhnoor/)
+- GitHub: [Yash](https://github.com/yash244466666)
+- LinkedIn: [Yash Solo](https://www.linkedin.com/in/yash-solo)
+- Twitter: [Yash Solo](https://twitter.com/yash_solo000)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

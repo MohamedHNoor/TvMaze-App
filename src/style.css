@@ -103,17 +103,13 @@ main {
   padding: 15px;
   gap: 15px;
   border-radius: 12px;
-  box-shadow:
-    rgba(0, 0, 0, 0.4) 0 2px 4px,
-    rgba(0, 0, 0, 0.3) 0 7px 13px -3px,
+  box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px, rgba(0, 0, 0, 0.3) 0 7px 13px -3px,
     rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
   transition: 0.5s;
 }
 
 .card:hover {
-  box-shadow:
-    rgba(0, 0, 0, 0.9) 0 2px 4px,
-    rgba(0, 0, 0, 0.9) 0 7px 13px -3px,
+  box-shadow: rgba(0, 0, 0, 0.9) 0 2px 4px, rgba(0, 0, 0, 0.9) 0 7px 13px -3px,
     rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
 }
 
@@ -124,9 +120,7 @@ main {
   height: 325px;
   border-radius: 10px;
   transition: 0.5s;
-  box-shadow:
-    rgba(0, 0, 0, 0.9) 0 2px 4px,
-    rgba(0, 0, 0, 0.9) 0 7px 13px -3px,
+  box-shadow: rgba(0, 0, 0, 0.9) 0 2px 4px, rgba(0, 0, 0, 0.9) 0 7px 13px -3px,
     rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
   cursor: pointer;
   text-align: center;

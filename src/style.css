@@ -211,8 +211,12 @@ button:active .button-top {
   font-size: 18px;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
+}
+
+.footer-text {
+  margin: 0 0 0 10rem;
 }
 
 .footer-link {

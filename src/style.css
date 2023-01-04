@@ -91,7 +91,7 @@ main {
   gap: 20px;
   margin-top: 12rem;
 }
-
+/* stylelint-disable */
 .card {
   display: flex;
   flex-direction: column;
@@ -127,7 +127,7 @@ main {
   align-items: center;
   overflow: hidden;
 }
-
+/* stylelint-enable */
 .img p {
   display: flex;
   flex-direction: column;

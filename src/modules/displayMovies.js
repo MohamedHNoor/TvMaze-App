@@ -1,3 +1,5 @@
+import likeIcon from '../assets/like.png';
+
 // display movies
 const displayMovies = (movies) => {
   const lists = document.querySelector('.lists');
@@ -31,3 +33,5 @@ const displayMovies = (movies) => {
     `;
   });
 };
+
+export default displayMovies;

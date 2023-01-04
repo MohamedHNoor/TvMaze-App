@@ -121,9 +121,28 @@ const showComments = async (id) => {
   return allComments;
 };
 
-  // add comments counter
+// add comments counter
   const addCommentCounter = () => {
     const commentItems = document.querySelectorAll('.comment-paragraph');
     const numberOfComments = commentItems.length;
     return numberOfComments;
+  };
+
+// display comments
+  const displayComments = (nameInput, commentInput) => {
+    const commentSection = document.querySelector('.comment-section');
+    const paragraphs = document.querySelectorAll('.comment-paragraph');
+    const date = new Date().toISOString().slice(0, 10);
+    if (!paragraphs.length) {
+      document.querySelector(
+        '.no_comment'
+      ).innerHTML = `${date} ${nameInput}: "${commentInput}"`;
+    } else {
+      const paragraph = document.createElement('p');
+      paragraph.classList.add('comment-paragraph');
+      paragraph.textContent = `${date} ${nameInput}: "${commentInput}"`;
+      commentSection.appendChild(paragraph);
+    }
+    const headings = document.querySelector('.comment-section');
+    headings.firstElementChild.innerHTML = `comments (${addCommentCounter()})`;
   };

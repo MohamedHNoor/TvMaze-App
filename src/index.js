@@ -146,3 +146,121 @@ const showComments = async (id) => {
     const headings = document.querySelector('.comment-section');
     headings.firstElementChild.innerHTML = `comments (${addCommentCounter()})`;
   };
+
+// add new comments
+ const addNewComments = (id) => {
+  const nameInput = document.querySelector('.username');
+  const commentInput = document.querySelector('.comment');
+  const submitBtn = document.querySelector('.submit-btn');
+  submitBtn.addEventListener('click', async () => {
+    if (!nameInput.value) {
+      nameInput.setCustomValidity('Please enter your name');
+      nameInput.reportValidity();
+      setTimeout(() => {
+        nameInput.setCustomValidity('');
+      }, 1500);
+      return;
+    }
+    if (!commentInput.value) {
+      commentInput.setCustomValidity('Please enter your insights');
+      commentInput.reportValidity();
+      setTimeout(() => {
+        commentInput.setCustomValidity('');
+      }, 1500);
+      return;
+    }
+    await fetch(`${involvementURL}/comments`, {
+      method: 'POST',
+      body: JSON.stringify({
+        item_id: `${+id}`,
+        username: nameInput.value,
+        comment: commentInput.value
+      }),
+      headers: { 'Content-Type': 'application/json' }
+    });
+    await showComments(id);
+    displayComments(nameInput.value, commentInput.value);
+    nameInput.value = '';
+    commentInput.value = '';
+  });
+};
+const modal = document.querySelector('.modal');
+const modalHandler = (movies) => {
+  const commentBtns = document.querySelectorAll('.comment-button');
+  commentBtns.forEach(async (button) => {
+    button.addEventListener('click', async () => {
+      document.body.style.overflow = 'hidden';
+      const mainButton = movies.find(
+        (movie) => movie.id === +button.dataset.id
+      );
+      modal.classList.add('visible');
+      const comments = await showComments(button.dataset.id);
+      modal.innerHTML += `
+      <div class="modal-container">
+      <div class="modal-header">
+        <div
+          class="img"
+          style="
+            background: url('${mainButton.image.medium}');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+          "
+        >
+          <span>${mainButton.summary}</span>
+        </div>
+        <div>
+          <h2 class="modal-title">${mainButton.name}</h2>
+          <h4 class="modal-genres">${mainButton.genres}</h4>
+          <form class="form">
+            <h2 class="form-heading">Add a Comment</h2>
+            <input
+              type="text"
+              class="username"
+              placeholder="Your Name..."
+            />
+            <input
+              type="text"
+              name="comment"
+              class="comment"
+              placeholder="Your Insights..."
+            />
+            <button type="button" class="submit-btn">
+              <span class="button-top">Comment</span>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="close-icon">&times;</div>
+      <div>
+        <div class="comment-section">
+          <h2 class="comment-heading">
+            (Comments (${comments.error ? 0 : comments.length})
+          </h2>
+          ${
+            comments.error
+              ? '<p class="no_comment"> No comment for this movie</p>'
+              : `
+          ${comments
+            .map(
+              (comment, idx) => `
+            <p class='comment_paragraph' key=${idx}>${comment.creation_date} ${comment.username}: "${comment.comment}"</p>
+          `
+            )
+            .join(' ')}
+        `
+          }
+        </div>
+      </div>
+    </div>
+      `;
+      document.querySelector('.close-icon').addEventListener('click', () => {
+        modal.classList.remove('visible');
+        modal.innerHTML = '';
+        document.body.style.overflow = 'visible';
+      });
+      addNewComments(button.dataset.id);
+      addCommentCounter();
+    });
+  });
+};

@@ -187,6 +187,7 @@ const showComments = async (id) => {
 };
 const modal = document.querySelector('.modal');
 // Add model handler
+
 const modalHandler = (movies) => {
   const commentBtns = document.querySelectorAll('.comment-button');
   commentBtns.forEach(async (button) => {

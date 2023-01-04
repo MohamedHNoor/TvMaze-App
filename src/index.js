@@ -65,6 +65,7 @@ const showsData = async () => {
   const movies = await response.json();
   const latestMovies = movies.slice(0, 12);
   displayMovies(latestMovies);
+  modalHandler(latestMovies);
   movieLoaded();
 };
 
@@ -185,6 +186,7 @@ const showComments = async (id) => {
   });
 };
 const modal = document.querySelector('.modal');
+// Add model handler
 const modalHandler = (movies) => {
   const commentBtns = document.querySelectorAll('.comment-button');
   commentBtns.forEach(async (button) => {
@@ -215,11 +217,13 @@ const modalHandler = (movies) => {
           <form class="form">
             <h2 class="form-heading">Add a Comment</h2>
             <input
+              id="pop-user"
               type="text"
               class="username"
               placeholder="Your Name..."
             />
             <input
+            id="pop-comment"
               type="text"
               name="comment"
               class="comment"

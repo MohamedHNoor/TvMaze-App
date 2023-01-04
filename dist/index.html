@@ -7,7 +7,7 @@
     <title>Document</title>
   <script defer src="main.js"></script></head>
   <body id="body">
-    <header>
+    <header id="header">
       <div class="brand">
         <a href="index.html" class="logo"></a>
         <a href="index.html">TV Shows</a>
@@ -40,6 +40,60 @@
           <button class="comment-button" data-id="${index + 1}">
             <span class="button-top">Comment</span>
           </button>
+        </div> -->
+      </section>
+      <section class="modal">
+        <!-- <div class="modal-container">
+          <div class="modal-header">
+            <div
+              class="img"
+              style="
+                background: url('${button.image.medium}');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+              "
+            >
+              <span>${actualButton.summary}</span>
+            </div>
+            <div>
+              <h2 class="modal-title">${button.name}</h2>
+              <h4 class="modal-genres">${button.genres}</h4>
+              <form class="form">
+                <h2 class="form-heading">Add a Comment</h2>
+                <input
+                  type="text"
+                  class="username"
+                  placeholder="Your Name..."
+                />
+                <input
+                  type="text"
+                  name="comment"
+                  class="comment"
+                  placeholder="Your Insights..."
+                />
+                <button type="button" class="submit_button">
+                  <span class="button-top">Comment</span>
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="close-icon">&times;</div>
+          <div>
+            <div class="comment-section">
+              <h2 class="comment-heading">
+                (Comments (${comments.error ? 0 : comments.length})
+              </h2>
+              ${comments.error ? '
+              <p class="no_comment">No comment for this movie</p>
+              ' : ` ${comments.map((comment, idx) => `
+              <p class="comment_paragraph" key="${idx}">
+                ${comment.creation_date} ${comment.username}:
+                "${comment.comment}"
+              </p>
+              `).join('')} `}
+            </div>
+          </div>
         </div> -->
       </section>
     </main>

@@ -4,9 +4,9 @@ const postLikes = async (id) => {
   await fetch(`${involvementURL}/likes`, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ item_id: id })
+    body: JSON.stringify({ item_id: id }),
   });
 };
 

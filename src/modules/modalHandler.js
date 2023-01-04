@@ -10,7 +10,7 @@ const modalHandler = (movies) => {
     button.addEventListener('click', async () => {
       document.body.style.overflow = 'hidden';
       const mainButton = movies.find(
-        (movie) => movie.id === Number(button.dataset.id)
+        (movie) => movie.id === Number(button.dataset.id),
       );
       modal.classList.add('visible');
       const comments = await showComments(button.dataset.id);
@@ -56,20 +56,20 @@ const modalHandler = (movies) => {
       <div>
         <div class="comment-section">
         <h2 class='comment-heading'>Comments (${
-          comments.error ? 0 : comments.length
-        })<h2/>
+  comments.error ? 0 : comments.length
+})<h2/>
         
         ${
-          comments.error
-            ? '<p class="no_comment"> No comment for this movie</p>'
-            : ` ${comments
-                .map(
-                  (comment, idx) => `
+  comments.error
+    ? '<p class="no_comment"> No comment for this movie</p>'
+    : ` ${comments
+      .map(
+        (comment, idx) => `
               <p class='comment_paragraph' key=${idx}>${comment.creation_date} ${comment.username}: "${comment.comment}"</p>
-            `
-                )
-                .join('')} `
-        }
+            `,
+      )
+      .join('')} `
+}
           </div>
         </div>
       </div>

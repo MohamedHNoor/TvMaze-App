@@ -29,9 +29,9 @@ const addNewComments = (id) => {
       body: JSON.stringify({
         item_id: `${Number(id)}`,
         username: nameInput.value,
-        comment: commentInput.value
+        comment: commentInput.value,
       }),
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 'Content-Type': 'application/json' },
     });
 
     await showComments(id);

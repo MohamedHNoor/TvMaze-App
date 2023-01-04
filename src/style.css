@@ -8,17 +8,6 @@
   --extra-color: #e26868;
 }
 
-/* - Primary: #e67e22
-- Tints:
-#fdf2e9
-#fae5d3
-#eb984e
-
-- Shades:
-#cf711f
-#45260a
-*/
-
 * {
   padding: 0;
   margin: 0;
@@ -91,8 +80,6 @@ main {
   display: flex;
   justify-content: center;
   position: relative;
-
-  /* background: var(--bg-color); */
 }
 
 .lists {
@@ -112,8 +99,6 @@ main {
   justify-content: center;
   align-items: center;
   background: #bc2c0b;
-
-  /* color: var(--primary-color); */
   width: 280px;
   padding: 15px;
   gap: 15px;
@@ -311,7 +296,6 @@ button:active .button-top {
 }
 
 .modal-container h2 {
-  /* margin-bottom: 0.6rem; */
   padding: 10px 0;
 }
 /* stylelint-disable */
@@ -360,11 +344,7 @@ input {
   background: transparent;
   padding: 0 10px;
   color: #fff;
-
-  /* color: var(--primary-color); */
   border: none;
-
-  /* border-bottom: 2px solid var(--primary-color); */
   margin-bottom: 10px;
 }
 

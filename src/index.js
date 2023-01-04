@@ -120,3 +120,10 @@ const showComments = async (id) => {
   const allComments = await response.json();
   return allComments;
 };
+
+  // add comments counter
+  const addCommentCounter = () => {
+    const commentItems = document.querySelectorAll('.comment-paragraph');
+    const numberOfComments = commentItems.length;
+    return numberOfComments;
+  };

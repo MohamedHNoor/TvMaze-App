@@ -3,7 +3,8 @@ import Logo from './assets/logo.svg';
 import likeIcon from './assets/like.png';
 
 // const involvementID = 'JNsfgJQ37UBE16zOiirg';
-const involvementURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/JNsfgJQ37UBE16zOiirg';
+const involvementURL =
+  'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/JNsfgJQ37UBE16zOiirg';
 
 // logo
 const logo = new Image();
@@ -11,39 +12,39 @@ const brand = document.querySelector('.logo');
 logo.src = Logo;
 brand.appendChild(logo);
 
-// display movies
-const displayMovies = (movies) => {
-  const lists = document.querySelector('.lists');
-  lists.innerHTML = '';
-  movies.forEach((movie, index) => {
-    lists.innerHTML += `
-    <div class="card">
-      <div
-        class="img"
-        style="
-              background: url('${movie.image.medium}');
-              background-position: center;
-              background-repeat: no-repeat;
-              background-size: cover;
-            "
-      >
-        <p class="summary">${movie.summary}</p>
-      </div>
-      <h3 class="title">${movie.name}</h3>
-      <div class="likes">
-        <img src="${likeIcon}" alt="" class="like-icon" id="${movie.id}" />
-        <p class="like-count" id="${movie.id}">
-          0
-        </p>
-        <p>Likes</p>
-      </div>
-      <button class="comment-button" data-id="${index + 1}">
-        <span class="button-top">Comment</span>
-      </button>
-  </div>;
-    `;
-  });
-};
+// // display movies
+// const displayMovies = (movies) => {
+//   const lists = document.querySelector('.lists');
+//   lists.innerHTML = '';
+//   movies.forEach((movie, index) => {
+//     lists.innerHTML += `
+//     <div class="card">
+//       <div
+//         class="img"
+//         style="
+//               background: url('${movie.image.medium}');
+//               background-position: center;
+//               background-repeat: no-repeat;
+//               background-size: cover;
+//             "
+//       >
+//         <p class="summary">${movie.summary}</p>
+//       </div>
+//       <h3 class="title">${movie.name}</h3>
+//       <div class="likes">
+//         <img src="${likeIcon}" alt="" class="like-icon" id="${movie.id}" />
+//         <p class="like-count" id="${movie.id}">
+//           0
+//         </p>
+//         <p>Likes</p>
+//       </div>
+//       <button class="comment-button" data-id="${index + 1}">
+//         <span class="button-top">Comment</span>
+//       </button>
+//   </div>;
+//     `;
+//   });
+// };
 
 // fetch data from API
 
@@ -93,9 +94,9 @@ const postLikes = async (id) => {
   await fetch(`${involvementURL}/likes`, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ item_id: id }),
+    body: JSON.stringify({ item_id: id })
   });
 };
 
@@ -136,7 +137,7 @@ const displayComments = (nameInput, commentInput) => {
   const date = new Date().toISOString().slice(0, 10);
   if (!paragraphs.length) {
     document.querySelector(
-      '.no_comment',
+      '.no_comment'
     ).innerHTML = `${date} ${nameInput}: "${commentInput}"`;
   } else {
     const paragraph = document.createElement('p');
@@ -175,9 +176,9 @@ const addNewComments = (id) => {
       body: JSON.stringify({
         item_id: `${+id}`,
         username: nameInput.value,
-        comment: commentInput.value,
+        comment: commentInput.value
       }),
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json' }
     });
     await showComments(id);
     displayComments(nameInput.value, commentInput.value);
@@ -194,7 +195,7 @@ const modalHandler = (movies) => {
     button.addEventListener('click', async () => {
       document.body.style.overflow = 'hidden';
       const mainButton = movies.find(
-        (movie) => movie.id === +button.dataset.id,
+        (movie) => movie.id === +button.dataset.id
       );
       modal.classList.add('visible');
       const comments = await showComments(button.dataset.id);
@@ -243,18 +244,18 @@ const modalHandler = (movies) => {
             (Comments (${comments.error ? 0 : comments.length})
           </h2>
           ${
-  comments.error
-    ? '<p class="no_comment"> No comment for this movie</p>'
-    : `
+            comments.error
+              ? '<p class="no_comment"> No comment for this movie</p>'
+              : `
           ${comments
-    .map(
-      (comment, idx) => `
+            .map(
+              (comment, idx) => `
             <p class='comment_paragraph' key=${idx}>${comment.creation_date} ${comment.username}: "${comment.comment}"</p>
-          `,
-    )
-    .join(' ')}
+          `
+            )
+            .join(' ')}
         `
-}
+          }
         </div>
       </div>
     </div>

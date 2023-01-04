@@ -59,7 +59,7 @@ const itemsCounter = () => {
 const movieLoaded = () => {
   itemsCounter();
 };
-
+/* eslint-disable */
 const showsData = async () => {
   const response = await fetch('https://api.tvmaze.com/shows');
   const movies = await response.json();
@@ -68,6 +68,7 @@ const showsData = async () => {
   modalHandler(latestMovies);
   movieLoaded();
 };
+/* eslint-enable */
 
 // displayLikes function
 
@@ -112,8 +113,7 @@ window.addEventListener('click', (event) => {
 getLikes();
 showsData();
 
-
-/////////////////////////////POPUP//////////////////////////////////////////
+/// //////////////////////////POPUP//////////////////////////////////////////
 
 // Popup
 const showComments = async (id) => {
@@ -123,33 +123,33 @@ const showComments = async (id) => {
 };
 
 // add comments counter
-  const addCommentCounter = () => {
-    const commentItems = document.querySelectorAll('.comment-paragraph');
-    const numberOfComments = commentItems.length;
-    return numberOfComments;
-  };
+const addCommentCounter = () => {
+  const commentItems = document.querySelectorAll('.comment-paragraph');
+  const numberOfComments = commentItems.length;
+  return numberOfComments;
+};
 
 // display comments
-  const displayComments = (nameInput, commentInput) => {
-    const commentSection = document.querySelector('.comment-section');
-    const paragraphs = document.querySelectorAll('.comment-paragraph');
-    const date = new Date().toISOString().slice(0, 10);
-    if (!paragraphs.length) {
-      document.querySelector(
-        '.no_comment'
-      ).innerHTML = `${date} ${nameInput}: "${commentInput}"`;
-    } else {
-      const paragraph = document.createElement('p');
-      paragraph.classList.add('comment-paragraph');
-      paragraph.textContent = `${date} ${nameInput}: "${commentInput}"`;
-      commentSection.appendChild(paragraph);
-    }
-    const headings = document.querySelector('.comment-section');
-    headings.firstElementChild.innerHTML = `comments (${addCommentCounter()})`;
-  };
+const displayComments = (nameInput, commentInput) => {
+  const commentSection = document.querySelector('.comment-section');
+  const paragraphs = document.querySelectorAll('.comment-paragraph');
+  const date = new Date().toISOString().slice(0, 10);
+  if (!paragraphs.length) {
+    document.querySelector(
+      '.no_comment',
+    ).innerHTML = `${date} ${nameInput}: "${commentInput}"`;
+  } else {
+    const paragraph = document.createElement('p');
+    paragraph.classList.add('comment-paragraph');
+    paragraph.textContent = `${date} ${nameInput}: "${commentInput}"`;
+    commentSection.appendChild(paragraph);
+  }
+  const headings = document.querySelector('.comment-section');
+  headings.firstElementChild.innerHTML = `comments (${addCommentCounter()})`;
+};
 
 // add new comments
- const addNewComments = (id) => {
+const addNewComments = (id) => {
   const nameInput = document.querySelector('.username');
   const commentInput = document.querySelector('.comment');
   const submitBtn = document.querySelector('.submit-btn');
@@ -175,9 +175,9 @@ const showComments = async (id) => {
       body: JSON.stringify({
         item_id: `${+id}`,
         username: nameInput.value,
-        comment: commentInput.value
+        comment: commentInput.value,
       }),
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 'Content-Type': 'application/json' },
     });
     await showComments(id);
     displayComments(nameInput.value, commentInput.value);
@@ -194,7 +194,7 @@ const modalHandler = (movies) => {
     button.addEventListener('click', async () => {
       document.body.style.overflow = 'hidden';
       const mainButton = movies.find(
-        (movie) => movie.id === +button.dataset.id
+        (movie) => movie.id === +button.dataset.id,
       );
       modal.classList.add('visible');
       const comments = await showComments(button.dataset.id);
@@ -243,18 +243,18 @@ const modalHandler = (movies) => {
             (Comments (${comments.error ? 0 : comments.length})
           </h2>
           ${
-            comments.error
-              ? '<p class="no_comment"> No comment for this movie</p>'
-              : `
+  comments.error
+    ? '<p class="no_comment"> No comment for this movie</p>'
+    : `
           ${comments
-            .map(
-              (comment, idx) => `
+    .map(
+      (comment, idx) => `
             <p class='comment_paragraph' key=${idx}>${comment.creation_date} ${comment.username}: "${comment.comment}"</p>
-          `
-            )
-            .join(' ')}
+          `,
+    )
+    .join(' ')}
         `
-          }
+}
         </div>
       </div>
     </div>

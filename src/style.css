@@ -91,7 +91,7 @@ main {
   gap: 20px;
   margin-top: 12rem;
 }
-/* stylelint-disable */
+
 .card {
   display: flex;
   flex-direction: column;
@@ -103,13 +103,17 @@ main {
   padding: 15px;
   gap: 15px;
   border-radius: 12px;
-  box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px, rgba(0, 0, 0, 0.3) 0 7px 13px -3px,
+  box-shadow:
+    rgba(0, 0, 0, 0.4) 0 2px 4px,
+    rgba(0, 0, 0, 0.3) 0 7px 13px -3px,
     rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
   transition: 0.5s;
 }
 
 .card:hover {
-  box-shadow: rgba(0, 0, 0, 0.9) 0 2px 4px, rgba(0, 0, 0, 0.9) 0 7px 13px -3px,
+  box-shadow:
+    rgba(0, 0, 0, 0.9) 0 2px 4px,
+    rgba(0, 0, 0, 0.9) 0 7px 13px -3px,
     rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
 }
 
@@ -120,14 +124,21 @@ main {
   height: 325px;
   border-radius: 10px;
   transition: 0.5s;
-  box-shadow: rgba(0, 0, 0, 0.9) 0 2px 4px, rgba(0, 0, 0, 0.9) 0 7px 13px -3px,
+  box-shadow:
+    rgba(0, 0, 0, 0.9) 0 2px 4px,
+    rgba(0, 0, 0, 0.9) 0 7px 13px -3px,
     rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
   cursor: pointer;
   text-align: center;
   align-items: center;
   overflow: hidden;
 }
-/* stylelint-enable */
+
+.modal-container p {
+  width: 70%;
+  margin: 0 auto;
+}
+
 .img p {
   display: flex;
   flex-direction: column;
@@ -300,16 +311,29 @@ button:active .button-top {
 .modal-container h2 {
   padding: 10px 0;
 }
-/* stylelint-disable */
-.modal-container p {
-  width: 70%;
-  margin: 0 auto;
+
+.modal-container::-webkit-scrollbar-track,
+.img span::-webkit-scrollbar-track {
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-container::-webkit-scrollbar,
+.img span::-webkit-scrollbar {
+  width: 7px;
+}
+
+.modal-container::-webkit-scrollbar-thumb,
+.img span::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  box-shadow: inset 0 0 6px var(--extra-color);
+  background-color: var(--extra-color);
 }
 
 .modal-container h4 {
   font-style: italic;
 }
-/* stylelint-enable */
+
 .comment-section {
   padding: 30px 0;
   color: #fff;
@@ -365,24 +389,6 @@ input::placeholder {
 
 .visible {
   display: block;
-}
-
-.modal-container::-webkit-scrollbar-track,
-.img span::-webkit-scrollbar-track {
-  border-radius: 12px;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.modal-container::-webkit-scrollbar,
-.img span::-webkit-scrollbar {
-  width: 7px;
-}
-
-.modal-container::-webkit-scrollbar-thumb,
-.img span::-webkit-scrollbar-thumb {
-  border-radius: 12px;
-  box-shadow: inset 0 0 6px var(--extra-color);
-  background-color: var(--extra-color);
 }
 
 ::placeholder {

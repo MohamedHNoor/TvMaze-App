@@ -13,8 +13,9 @@ const displayComments = (nameInput, commentInput) => {
     paragraph.textContent = `${date} ${nameInput}: "${commentInput}"`;
     commentSection.appendChild(paragraph);
   }
+
   const headings = document.querySelector('.comment-heading');
-  headings.firstElementChild.innerHTML += `Comments (${addCommentCounter()})`;
+  headings.innerHTML = `Comments (${addCommentCounter()})`;
 };
 
 export default displayComments;

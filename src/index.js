@@ -26,4 +26,3 @@ window.addEventListener('click', (event) => {
 
 getLikes();
 showsData();
-// displayMovies();

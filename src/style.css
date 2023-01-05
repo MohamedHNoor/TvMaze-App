@@ -139,7 +139,11 @@ main {
   opacity: 0;
   color: #fff;
   border-radius: 10px;
-  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.img p::-webkit-scrollbar {
+  display: none;
 }
 
 .img:hover p {

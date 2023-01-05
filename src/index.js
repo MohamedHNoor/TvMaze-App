@@ -3,9 +3,6 @@ import Logo from './assets/logo.svg';
 import postLikes from './modules/postLikes.js';
 import getLikes from './modules/getLikes.js';
 import showsData from './modules/showData.js';
-// import displayMovies from './modules/displayMovies.js';
-
-// const involvementID = 'JNsfgJQ37UBE16zOiirg';
 
 // logo
 const logo = new Image();
